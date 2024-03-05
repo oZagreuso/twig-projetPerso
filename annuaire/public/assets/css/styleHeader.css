@@ -1,0 +1,46 @@
+
+/* --- BASIC HEADER --- */
+
+header {
+    margin: 0;
+  }
+
+  .basic_header {
+    display: flex;
+    justify-content:space-around;
+    background-color: white;
+    margin-left: 0;
+  }
+
+  .basic_title {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .logo {
+    margin-top: 50px;
+}
+  
+  h1 {
+    color: #18286A;
+    margin-top: 115px;
+    margin-right: 200px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 1000;
+    font-size: 2.625rem;
+    line-height: 3.25rem;
+  }
+  
+  h2, h3 {
+      margin-top: 75px;
+      margin-left: 100px;
+      width: 120%;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 2.625rem;
+      line-height: 3.25rem;
+      color: white;
+  }
+  
+  
+  

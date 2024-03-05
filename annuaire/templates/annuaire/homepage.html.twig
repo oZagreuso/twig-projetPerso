@@ -1,24 +1,19 @@
 {% extends './base.html.twig' %}
 
-{% block title %}Annuaire - Foyer{% endblock %}
 
 
-{% block body %}
+    {% block title %}Annuaire - Foyer{% endblock %}
 
-       <header>
-        <section class="benHeader">
-            <div class="title">
-                <h1>Annuaire des bénévoles du foyer</h1>
-                {% for benevole in benevole %}
-                <h2>{{ benevole.nom }}
-                {% endfor %}
+    {% block body %}
 
-            </div>
-            <div class="logo">
-                <image src="./assets/img/crm_logo.png" alt="logo du CRM";>
-            </div>
-       
-        </section>
-    </header>
+    {% block styles %}
+
+        <link rel="stylesheet" href="{{ asset('assets/css/styleAnnuaire.css') }}">
+
+        {% include './basic_header/basicHeader.html.twig' %}   
+
+        {% include 'benevole/benevole.html.twig' with {'benevole': benevole} %}	
+
+    {% endblock %}
 
 {% endblock %}

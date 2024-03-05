@@ -18,13 +18,25 @@ class AnnuaireController extends AbstractController
             'controller_name' => 'AnnuaireController',
         ]);
     }
-
+/*
     #[Route('/annuaire', name: 'annuaire_')]
     #[Route('/', name: 'homepage')]
-    public function benevole(BenevoleRepository $benevoleRepository): Response
+    public function benevoleNom(BenevoleRepository $benevoleRepository): Response
     {
         return $this->render('annuaire/homepage.html.twig', [
             'benevole' => $benevoleRepository->findBy([], ['nom' => 'asc'])
         ]);
+    }*/
+
+    #[Route('/annuaire', name: 'annuaire_')]
+    #[Route('/', name: 'homepage')]
+    public function benevoleNom(BenevoleRepository $benevoleRepository): Response
+    {
+        $benevole = $benevoleRepository->findAll();
+        return $this->render('annuaire/homepage.html.twig', [
+            'benevole' => $benevole,
+        ]);
+
     }
+
 }
