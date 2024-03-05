@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Repository\BenevoleRepository;
+use App\Entity\Benevole;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -17,6 +18,6 @@ class BenevoleController extends AbstractController
         return $this->render('benevole/benevole.html.twig', [
             'benevole' => $benevole,
         ]);
-}
+    }
 
 }
