@@ -7,8 +7,22 @@
 
 		<link rel="stylesheet" href="{{ asset('assets/css/styleBenevole.css') }}">
 
-        {% block javascripts %}
+         <section class="management">
+            <div class="listeNom" >   
+            <select @change="filterBenevole"  classe="liste">
+                <option class="optionText" value="0"><p>Selectionnez un bénévole</p></option>
+                <option class="optionText" ></option>
+            </select>
+            </div> 
+            <div class="listePoste">
+                <select @change="filterResponsable" classe="listeRes">
+                    <option class="optionText" value="0"><p>Selectionnez un responsable</p></option>
+                    <option class="optionText"  ></option>
+                </select>
+            </div>
+        </section> 
 
+        <section class="benevole">
 		<table class="benevoleTable">
 			<thead>
 				<tr>
@@ -29,10 +43,15 @@
 					</tr>
 				{% endfor %}
 			</tbody>
-		</table>
+		</table> 
 
-        {% endblock %}
+        <div class="adminS">
+            <button class="adminLog" @click="adminPortal()">Admin</button>
+        </div> 
+        </section>
 
 	{% endblock %}
+
+     
 
 {% endblock %}

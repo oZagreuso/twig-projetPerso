@@ -18,8 +18,8 @@ class AnnuaireController extends AbstractController
             'controller_name' => 'AnnuaireController',
         ]);
     }
-/*
-    /// pour aller chercher un élément dans BenevoleRepository /// -->
+        /*
+            /// pour aller chercher un élément en particulier dans BenevoleRepository /// -->
 
             #[Route('/annuaire', name: 'annuaire_')]
             #[Route('/', name: 'homepage')]
