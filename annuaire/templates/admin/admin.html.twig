@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+{% block styles %}
+
+ <link rel="stylesheet" href="{{ asset('assets/css/styleAnnuaire.css') }}">
+ <link rel="stylesheet" href="{{ asset('assets/css/styleAdmin.css') }}">
+
+        {% include './basic_header/basicHeader.html.twig' %}
+
+<p></p>
+<div class="card">
+  <div class="card-details">
+    <p class="text-title">KING SAMBA</p>
+    <p class="text-body">Samba est le maitre du monde</p>
+  </div>
+  <button class="card-button">More info</button>
+</div>
+
+{% endblock %}
+{% endblock %}

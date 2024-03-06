@@ -13,8 +13,8 @@
 
 .benevoleTable {
     margin-top: 20px;
-    margin-right: 25%;
-    margin-left: 25%;
+    margin-right: 250px;
+    margin-left: 465px;
     width: 600px;
     border:#FF5623 2px solid;
     border-collapse: collapse;
@@ -24,6 +24,7 @@
   th {
     font-size: larger;
     font-family: 'Montserrat', sans-serif;
+    margin-top: 4px;
   }
   
   th, td {
@@ -45,6 +46,8 @@
   .btn {
     display: inline-block;
     padding: 12px 24px;
+    margin-right: 3px;
+    margin-bottom: 3px;
     border: 1px solid #4f4f4f;
     border-radius: 4px;
     transition: all 0.2s ease-in;

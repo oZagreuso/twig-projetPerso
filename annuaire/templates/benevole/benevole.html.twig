@@ -1,6 +1,5 @@
 {% extends 'base.html.twig' %}
 
-
 {% block body %}
 
 	{% block styles %}    
@@ -8,15 +7,18 @@
 		<link rel="stylesheet" href="{{ asset('assets/css/styleBenevole.css') }}">
 
          <section class="management">
-            <div class="listeNom" >   
-            <select @change="filterBenevole"  classe="liste">
-                <option class="optionText" value="0"><p>Selectionnez un bénévole</p></option>
-                <option class="optionText" ></option>
+            <div class="listeNom" > 
+            	<select @change="filterBenevole"  classe="liste">		
+					<option class="optionText" ><p class="white">Selectionnez un bénévole</p></option>
+				{% for benevole in benevole %} 
+					<option class="optionText" >{{ benevole.prenom }} {{ benevole.nom }}</option>	
+				{% endfor %}
             </select>
+			
             </div> 
             <div class="listePoste">
                 <select @change="filterResponsable" classe="listeRes">
-                    <option class="optionText" value="0"><p>Selectionnez un responsable</p></option>
+                    <option class="optionText" ><p>Selectionnez un responsable</p></option>
                     <option class="optionText"  ></option>
                 </select>
             </div>
@@ -44,14 +46,24 @@
 				{% endfor %}
 			</tbody>
 		</table> 
-
-        <div class="adminS">
-            <button class="adminLog" @click="adminPortal()">Admin</button>
+		<div class="adminGate">
+		       <button class="adminLog" @click="adminPortal()">Admin</button>			
         </div> 
         </section>
-
+			
 	{% endblock %}
 
-     
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const adminButton = document.querySelector('.adminLog');
+                adminButton.addEventListener('click', adminPortal);
+            });
+        </script>
+
+    {% block scripts %}
+				 
+				<script src="{{ asset('assets/js/benevoleScript.js') }}"></script>		
+
+    {% endblock %}     
 
 {% endblock %}
