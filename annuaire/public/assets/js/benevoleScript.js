@@ -14,6 +14,7 @@ function adminPortal() {
 
 // externalScript.js
 
+/*
 function updateTable(data) {
     const benevoleTable = document.getElementById('benevoleTable');
     
@@ -44,7 +45,7 @@ function fetchData(selectedValue) {
         .catch(error => {
             console.error('Erreur lors de la récupération des données filtrées', error);
         });
-}
+}*/
 
 /*
 class AnnuaireRepository
