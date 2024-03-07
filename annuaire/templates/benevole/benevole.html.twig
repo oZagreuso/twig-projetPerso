@@ -18,52 +18,76 @@
             </div> 
             <div class="listePoste">
                 <select @change="filterResponsable" classe="listeRes">
-                    <option class="optionText" ><p>Selectionnez un responsable</p></option>
-                    <option class="optionText"  ></option>
+                    <option class="optionText"><p>Selectionnez un responsable</p></option>
+                    <option class="optionText"></option>
                 </select>
             </div>
         </section> 
 
+		
         <section class="benevole">
-		<table class="benevoleTable">
+		
+			
+		<table class="benevoleTable" id="benevoleTable">
 			<thead>
 				<tr>
 					<th>Nom</th>
-					<th>Prenom</th>
-					<th>Téléphone</th>
-					<th>Poste</th>
-				</tr>
+					<th>Prenom</th>				
 			</thead>
-			<tbody>
+
+			 <tbody>
 				{% for benevole in benevole %}
 					<tr>
 						<td>{{ benevole.prenom }}</td>
 						<td>{{ benevole.nom }}</td>
-						<td>{{ benevole.telephone }}</td>
-						<td>{{ benevole.poste }}</td>
 						<td><button :data-id="benevole.id" @click="openModal" class="btn">Info &#9993</button></td> 		
 					</tr>
 				{% endfor %}
 			</tbody>
 		</table> 
+		
+		
+		
 		<div class="adminGate">
 		       <button class="adminLog" @click="adminPortal()">Admin</button>			
         </div> 
         </section>
-			
+		
+
+{# 		
+			 <tbody>
+                <tr v-for="benevole of listeBenevolesFiltered">
+                    <td>{% verbatim %}{{ benevole.prenom }}	{% endverbatim %}</td>
+                    <td>{% verbatim %} {{ benevole.nom }}	{% endverbatim %}</td>
+                    <td><button :data-id="benevole.id" @click="openModal" class="btn">Info &#9993</button></td>                           
+                </tr>
+            </tbody>
+        </table> #}
+	
 	{% endblock %}
 
         <script>
             document.addEventListener("DOMContentLoaded", function() {
-                const adminButton = document.querySelector('.adminLog');
-                adminButton.addEventListener('click', adminPortal);
+            const adminButton = document.querySelector('.adminLog');
+            adminButton.addEventListener('click', adminPortal);
             });
+
+			document.addEventListener("DOMContentLoaded", function () {
+        	const selectListe = document.querySelector('.liste');
+
+        	selectListe.addEventListener('change', function () {
+            const selectedBenevole = this.value;
+            
+            fetchData(selectedBenevole);
+        });
+    });
+
+
+
+
+
         </script>
 
-    {% block scripts %}
-				 
-				<script src="{{ asset('assets/js/benevoleScript.js') }}"></script>		
-
-    {% endblock %}     
+     
 
 {% endblock %}
